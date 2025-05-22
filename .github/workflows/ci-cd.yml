@@ -57,16 +57,17 @@ jobs:
       - name: Build and push backend
         run: |
           docker buildx build \
-            --platform linux/amd64 \
-            --push \
-            -t melaku8080/login-app:latest \
-            -t ${{ secrets.DOCKER_USERNAME }}/login-backend:latest \
-            ./backend
+          --platform linux/amd64 \
+          --push \
+          -t melaku8080/login-app:latest \
+          -t ${{ secrets.DOCKER_USERNAME }}/login-backend:latest \
+          ./backend
 
       - name: Build and push frontend
         run: |
-          docker buildx build \
-            --platform linux/amd64 \
-            --push \
-            -t ${{ secrets.DOCKER_USERNAME }}/login-frontend:latest \
-            ./frontend
+         docker buildx build \
+         --platform linux/amd64 \
+         --push \
+         -t ${{ secrets.DOCKER_USERNAME }}/login-frontend:latest \
+         ./frontend
+ 
