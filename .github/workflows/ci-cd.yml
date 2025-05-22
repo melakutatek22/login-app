@@ -69,6 +69,4 @@ jobs:
             --push \
             -t ${{ secrets.DOCKER_USERNAME }}/login-frontend:latest \
             ./frontend
-      - name: Build Docker Image
-        working-directory: ./backend
-        run: docker buildx build -t melaku8080/login-app:latest .
+            
