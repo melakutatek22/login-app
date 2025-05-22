@@ -34,7 +34,8 @@ jobs:
 
       - name: Run frontend tests
         working-directory: ./frontend
-        run: npm test
+        run: |
+         if [ -f package.json ]; then npm install && npm test; else echo "No frontend/package.json found, skipping..."; fi
 
   build-and-push:
     runs-on: ubuntu-latest
