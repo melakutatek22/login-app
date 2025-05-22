@@ -30,12 +30,12 @@ jobs:
       - name: Install frontend dependencies
         working-directory: ./frontend
         run: |
-         if [ -f package.json ]; then npm install; else echo "No frontend/package.json found"; fi
+          if [ -f package.json ]; then npm install; else echo "No frontend/package.json found"; fi
 
       - name: Run frontend tests
         working-directory: ./frontend
         run: |
-         if [ -f package.json ]; then npm install && npm test; else echo "No frontend/package.json found, skipping..."; fi
+          if [ -f package.json ]; then npm test; else echo "No frontend/package.json found, skipping..."; fi
 
   build-and-push:
     runs-on: ubuntu-latest
