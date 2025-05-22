@@ -29,7 +29,8 @@ jobs:
 
       - name: Install frontend dependencies
         working-directory: ./frontend
-        run: npm install
+        run: |
+         if [ -f package.json ]; then npm install; else echo "No frontend/package.json found"; fi
 
       - name: Run frontend tests
         working-directory: ./frontend
